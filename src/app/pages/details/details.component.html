@@ -1,0 +1,47 @@
+<section class="grid md:grid-cols-2 my-20 gap-4">
+  <div class="flex flex-wrap gap-y-3 justify-center">
+    <div>
+      <img
+        [src]="imgSorce || product.imageCover"
+        class="w-full h-[300px] object-contain rounded-lg"
+      />
+    </div>
+    <div class="flex gap-4">
+      @for (img of product.images; track $index) {
+      <div class="rounded-lg">
+        <img
+          role="button"
+          [src]="img"
+          class="w-full h-[200px] object-contain rounded-lg shadow-md"
+          (click)="getSorce(img)"
+        />
+      </div>
+      }
+    </div>
+  </div>
+  <div class="grid gap-3">
+    <div class="grid gap-[1px] border-b-2">
+      <h2 class="font-bold text-3xl">{{ product.title }}</h2>
+      <p class="font-semibold">{{ product.description }}</p>
+      <span
+        >@for (num of [1,2,3,4,5].slice(0 , product.ratingsAverage); track
+        $index) {
+        <i class="fa-solid fa-star text-yellow-400"></i>
+        } @if (product.ratingsAverage % 1!==0) {
+        <i class="fa-solid fa-star-half text-yellow-400"></i>
+        } ({{ product.ratingsQuantity }})</span
+      >
+    </div>
+    <div>
+      <h3 class="text-3xl font-medium">
+        {{ product.price | currency : "GBP" }}
+      </h3>
+      <p class="font-bold">{{ product.slug }}</p>
+    </div>
+    <div>
+      <button class="my-btn" (click)="addToCart(product._id)">
+        {{ "button.add_to_cart" | translate }}
+      </button>
+    </div>
+  </div>
+</section>

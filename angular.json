@@ -20,9 +20,7 @@
             "outputPath": "dist/e-commerce",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -32,9 +30,16 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/preline/preline.js",
+              "./node_modules/@preline/toggle-password/index.js",
+              "node_modules/flyonui/flyonui.js",
+              "node_modules/flyonui/dist/js/accordion.js"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -46,8 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "10MB",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -83,10 +88,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -95,13 +97,14 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

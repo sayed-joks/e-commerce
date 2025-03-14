@@ -1,0 +1,65 @@
+<div class="my-10 border rounded-lg shadow-lg shadow-blue-600 overflow-hidden">
+  <section class="min-h-screen sm:min-h-screen items-center grid px-3">
+    <div>
+      <div class="flex justify-center flex-wrap flex-col py-4 items-center">
+        <img src="/images/freshcart-logo.svg" class="" />
+        <h1 class="font-bold text-center text-3xl">
+          {{ "login.title" | translate }}
+        </h1>
+      </div>
+      <form
+        class="flex justify-center flex-wrap"
+        [formGroup]="signin"
+        (ngSubmit)="submit()"
+      >
+        <div class="relative w-full sm:w-[85%] mb-3">
+          <input
+            formControlName="email"
+            type="email"
+            [placeholder]="'login.emailPlaceholder' | translate"
+            class="input input-filled peer"
+            id="filledInput"
+          />
+          <label class="input-filled-label" for="filledInput">{{
+            "login.emailPlaceholder" | translate
+          }}</label>
+          <span class="input-filled-focused"></span>
+        </div>
+        <div class="input-group w-full sm:w-[85%] mb-3">
+          <input
+            formControlName="password"
+            id="toggle-password"
+            type="password"
+            class="input focus:outline-none"
+            [placeholder]="'login.passwordPlaceholder' | translate"
+          />
+          <span class="input-group-text">
+            <button
+              type="button"
+              data-toggle-password='{ "target": "#toggle-password" }'
+              class="block"
+              aria-label="password toggle"
+            >
+              <span
+                class="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-5 flex-shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-5 flex-shrink-0"
+              ></span>
+            </button>
+          </span>
+        </div>
+        <div class="flex flex-col gap-y-3">
+          <button class="btn btn-primary btn-wide">
+            {{ "login.button" | translate }}
+          </button>
+        </div>
+      </form>
+      <div class="flex justify-center mt-5">
+        <button routerLink="/reset-password" class="text-xl link-animated">
+          {{ "login.forgot_password" | translate }}
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

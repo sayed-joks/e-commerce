@@ -1,0 +1,38 @@
+<section class="my-20">
+  <h1 class="text-4xl font-bold pb-5">
+    {{ "wishlist" | translate }} ({{ allWish.count }})
+  </h1>
+  <hr />
+  <section class="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 my-2">
+    @for (item of allWish.data; track $index) {
+    <div class="card sm:max-w-sm">
+      <figure><img [src]="item.imageCover" [alt]="item.title" /></figure>
+      <div class="card-body">
+        <h5 class="card-title mb-2.5">
+          {{ item.title.split(" ", 2).join(" ") }}
+        </h5>
+        <p class="mb-4">{{ item.description }}</p>
+        <div class="flex">
+          <p class="mb-4">{{ item.price | currency : "GBP" }}</p>
+          <span>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            {{ item.ratingsAverage }}</span
+          >
+        </div>
+        <div class="card-actions">
+          <button
+            class="btn btn-secondary btn-soft"
+            (click)="addToCart(item.id)"
+          >
+            {{ "button.add_to_cart" | translate }}
+          </button>
+          <button class="btn btn-primary" (click)="removeFav(item.id)">
+            <i class="fa-solid fa-trash group-hover:text-red-600"></i>
+            {{ "remove" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </section>
+</section>

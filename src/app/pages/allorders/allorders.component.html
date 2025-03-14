@@ -1,0 +1,35 @@
+<div class="border-base-content/25 w-full rounded-lg border my-20">
+  <div class="overflow-x-auto">
+    <table class="table rounded">
+      <thead>
+        <tr>
+          <th>{{ "created_at" | translate }}</th>
+          <th>{{ "number_of_products" | translate }}</th>
+          <th>{{ "payment_type" | translate }}</th>
+          <th>{{ "total_order_price" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (order of allUserOrders; track $index) {
+        <tr>
+          <td class="text-nowrap">
+            {{ order.createdAt.slice(0, 10) | date : "d MMM y" : "ar" }}
+          </td>
+          <td>{{ order.cartItems.length }} {{ "product" | translate }}</td>
+          <td>
+            <span
+              class="badge badge-soft text-2xl capitalize"
+              [class.badge-success]="order.paymentMethodType == 'card'"
+              [class.badge-info]="order.paymentMethodType == 'cash'"
+              >{{ order.paymentMethodType }}</span
+            >
+          </td>
+          <td class="text-start">
+            {{ order.totalOrderPrice | currency : "GBP" }}
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

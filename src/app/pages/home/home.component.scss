@@ -1,0 +1,15 @@
+.wish {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ccc; /* اللون الافتراضي */
+}
+
+button.fav-active {
+  color: #ff4757;
+}
+
+.fa-heart {
+  margin-right: 5px;
+}

@@ -1,0 +1,131 @@
+{
+  "nav": {
+    "categories": "التصنيفات",
+    "brands": "العلامات التجارية",
+    "orders": "الطلبات",
+    "wishlist": "قائمة الرغبات",
+    "language": "اللغة",
+    "register": "تسجيل",
+    "login": "تسجيل الدخول"
+  },
+  "cart": {
+    "items": "العناصر",
+    "subtotal": "المجموع الفرعي",
+    "view_cart": "عرض السلة",
+    "empty_message": "لا توجد منتجات في سلتك",
+    "order_summary": "ملخص الطلب",
+    "discount": "الخصم ({percentage}%)",
+    "delivery_fee": "رسوم التوصيل",
+    "total": "الإجمالي",
+    "checkout": "الانتقال للدفع",
+    "price": "السعر"
+  },
+  "pagination": {
+    "previous": "السابق",
+    "next": "التالي",
+    "page": "صفحة",
+    "from": "من"
+  },
+  "button": {
+    "add_to_cart": "أضف إلى السلة",
+    "clear_all": "مسح الكل"
+  },
+  "footer": {
+    "services": "الخدمات",
+    "branding": "العلامة التجارية",
+    "design": "التصميم",
+    "marketing": "التسويق",
+    "advertisement": "الإعلانات",
+
+    "company": "الشركة",
+    "about_us": "من نحن",
+    "contact": "اتصل بنا",
+    "jobs": "وظائف",
+    "press_kit": "المواد الصحفية",
+
+    "social": "وسائل التواصل"
+  },
+  "auth": {
+    "sign_out": "تسجيل الخروج",
+    "verifyCode": "تحقق من الرمز",
+    "codePlaceholder": "الرمز",
+    "enterEmail": "أدخل البريد الإلكتروني",
+    "emailPlaceholder": "البريد الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "resetPassword": "إعادة تعيين كلمة المرور",
+    "verifyButton": "تحقق من الرمز",
+    "resetButton": "إعادة تعيين كلمة المرور"
+  },
+  "checkout": {
+    "title": "إتمام الشراء",
+    "details": {
+      "label": "التفاصيل",
+      "placeholder": "أدخل تفاصيلك",
+      "required": "التفاصيل مطلوبة."
+    },
+    "phone": {
+      "label": "الهاتف",
+      "placeholder": "رقم الهاتف",
+      "required": "رقم الهاتف مطلوب.",
+      "invalid": "رقم الهاتف غير صالح. يجب أن يكون مكونًا من 11 رقمًا ويبدأ بـ 01."
+    },
+    "city": {
+      "label": "المدينة",
+      "placeholder": "المدينة",
+      "required": "المدينة مطلوبة."
+    },
+    "payment": {
+      "online": "الدفع الإلكتروني",
+      "cash": "الدفع نقدًا"
+    }
+  },
+  "popular_products": "المنتجات الشائعة",
+  "loading": "جاري التحميل...",
+  "login": {
+    "title": "تسجيل الدخول الآن",
+    "emailPlaceholder": "أدخل البريد الإلكتروني",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "button": "تسجيل الدخول",
+    "forgot_password": "هل نسيت كلمة المرور؟"
+  },
+  "register": {
+    "title": "سجّل مجانًا",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "أدخل كلمة المرور",
+    "rePassword": "أعد إدخال كلمة المرور",
+    "phoneNumber": "رقم الهاتف",
+    "button": "إنشاء حساب",
+    "errors": {
+      "nameRequired": "الاسم مطلوب.",
+      "nameMinLength": "يجب أن يكون الاسم على الأقل 3 أحرف.",
+      "nameMaxLength": "يجب ألا يتجاوز الاسم 50 حرفًا.",
+      "emailRequired": "البريد الإلكتروني مطلوب.",
+      "emailInvalid": "تنسيق البريد الإلكتروني غير صالح.",
+      "passwordRequired": "كلمة المرور مطلوبة.",
+      "rePasswordRequired": "كلمة المرور مطلوبة.",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+      "passwordInvalid": "يجب أن تتراوح كلمة المرور بين 8-20 حرفًا وتتضمن أحرفًا كبيرة وصغيرة وأرقامًا ورموزًا خاصة.",
+      "phoneRequired": "رقم الهاتف مطلوب.",
+      "phoneInvalid": "رقم الهاتف غير صالح. يجب أن يكون مكونًا من 11 رقمًا ويبدأ بـ 01."
+    }
+  },
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "steps": {
+    "verifyEmail": "تأكيد البريد الإلكتروني",
+    "verifyCode": "تأكيد الرمز",
+    "resetPassword": "إعادة تعيين كلمة المرور"
+  },
+  "enterEmail": "أدخل البريد الإلكتروني",
+  "products": "المنتجات",
+  "wishlist": "قائمة الرغبات",
+  "remove": "إزالة",
+  "created_at": "تاريخ الإنشاء",
+  "number_of_products": "عدد المنتجات",
+  "payment_type": "نوع الدفع",
+  "total_order_price": "إجمالي سعر الطلب",
+  "product": "منتج",
+  "verifyEmailButton": "تأكيد البريد الإلكتروني",
+  "cityRequired": "المدينة مطلوبة.",
+  "detailsRequired": "التفاصيل مطلوبة."
+}

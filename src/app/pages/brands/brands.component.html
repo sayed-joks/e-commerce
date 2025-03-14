@@ -1,0 +1,15 @@
+<section class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 my-10">
+  @for (brand of allBrand; track $index) {
+  <div class="card bg-base-100 shadow-xl hover:z-30">
+    <figure role="button" [routerLink]="['/product', brand._id]">
+      <img [src]="brand.image" alt="Shoes" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {{ brand.name }}
+        <div class="badge badge-secondary">New</div>
+      </h2>
+    </div>
+  </div>
+  }
+</section>

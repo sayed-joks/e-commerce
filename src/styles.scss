@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "ngx-toastr/toastr";
+.my-btn {
+  @apply py-2 px-4 border border-black rounded-full hover:text-white hover:bg-green-600 transition-all duration-200;
+}

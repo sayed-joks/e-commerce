@@ -1,0 +1,130 @@
+<section class="grid md:grid-cols-[60%_minmax(0,1fr)] my-8 gap-x-6">
+  <section class="border rounded-md shadow-lg">
+    <div class="w-[93%] mx-auto">
+      @if (cartDetails.totalCartPrice > 0) {
+      <div class="flex items-center my-3">
+        <button
+          type="button"
+          class="btn btn-outline group"
+          (click)="clearCart()"
+        >
+          <span class="group-hover:text-white">{{
+            "button.clear_all" | translate
+          }}</span>
+          <i class="fa-solid fa-trash group-hover:text-red-600"></i>
+        </button>
+      </div>
+      } @if (cartDetails.totalCartPrice > 0) { @for (cart of
+      cartDetails.products; track $index) {
+      <div
+        class="flex flex-wrap flex-col md:grid md:grid-cols-[30%_minmax(0,1fr)] items-center border-b-2 mt-1 gap-x-2 gap-y-4 py-4"
+      >
+        <div>
+          <img
+            [src]="cart.product.imageCover"
+            alt=""
+            class="md:h-[200px] h-[400px]"
+          />
+        </div>
+        <div class="md:flex md:flex-wrap md:justify-between grid md:gap-y-4">
+          <div>
+            <h2 class="text-3xl md:mb-3">
+              {{ cart.product.title.split(" ", 2).join(" ") }}
+            </h2>
+            <h2 class="text-2xl md:mb-3">
+              Category:
+              <span class="text-gray-400">{{
+                cart.product.category.name
+              }}</span>
+            </h2>
+            <h3 class="text-xl">
+              {{ "cart.price" | translate }}:
+              <span> {{ cart.price | currency }}</span>
+            </h3>
+          </div>
+          <div class="flex md:flex-col justify-between items-center">
+            <div class="flex items-center">
+              <button
+                type="button"
+                class="btn btn-outline group"
+                (click)="removeItem(cart.product._id)"
+              >
+                <i class="fa-solid fa-trash group-hover:text-red-600"></i>
+              </button>
+            </div>
+            <div class="flex gap-x-2 items-center justify-center">
+              <nav class="flex items-center gap-x-1">
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  (click)="updateCount(cart.product._id, cart.count - 1)"
+                >
+                  <i class="fa-solid fa-minus"></i>
+                </button>
+                <div class="flex items-center gap-x-1">
+                  <button
+                    type="button"
+                    class="btn-square aria-[current='page']:text-border-primary aria-[current='page']:bg-primary/10"
+                  >
+                    {{ cart.count }}
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  (click)="updateCount(cart.product._id, cart.count + 1)"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      } }@else {
+      <h1 class="text-4xl text-center mt-10">
+        {{ "cart.empty_message" | translate }}
+      </h1>
+      }
+    </div>
+  </section>
+  <section class="max-h-max bg-gray-50 border rounded py-7 dark:bg-gray-900">
+    <div class="w-[90%] mx-auto mt-4">
+      <h1 class="font-bold text-2xl my-5">
+        {{ "cart.order_summary" | translate }}
+      </h1>
+      <div class="border-b-2 grid gap-y-2">
+        <div class="flex flex-wrap justify-between">
+          <h1 class="text-2xl text-gray-500">
+            {{ "cart.subtotal" | translate }}
+          </h1>
+          <h2 class="text-2xl">{{ cartDetails.totalCartPrice | currency }}</h2>
+        </div>
+        <div class="flex flex-wrap justify-between">
+          <h1 class="text-2xl text-gray-500">
+            {{ "cart.discount" | translate }}(-0%)
+          </h1>
+          <h2 class="text-2xl text-red-600">{{ 0 | currency }}</h2>
+        </div>
+        <div class="flex flex-wrap justify-between mb-2">
+          <h1 class="text-2xl text-gray-500">
+            {{ "cart.delivery_fee" | translate }}
+          </h1>
+          <h2 class="text-2xl">{{ 0 | currency }}</h2>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between my-4">
+        <h1 class="text-2xl text-gray-500">{{ "cart.total" | translate }} :</h1>
+        <h2 class="text-2xl">{{ cartDetails.totalCartPrice | currency }}</h2>
+      </div>
+      <button
+        class="my-btn block mx-auto w-[85%] bg-black hover:bg-slate-900 text-white"
+        [disabled]="cartDetails.totalCartPrice === 0"
+        [routerLink]="['/checkout', cartDetails._id]"
+      >
+        {{ "cart.checkout" | translate }}
+        <span><i class="fa-solid fa-arrow-right"></i></span>
+      </button>
+    </div>
+  </section>
+</section>

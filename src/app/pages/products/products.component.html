@@ -1,0 +1,91 @@
+<section class="py-3">
+  <h2 class="text-6xl text-center mb-5">{{ "products" | translate }}</h2>
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-[80%] mx-auto md:container"
+  >
+    @if (brands.length > 0 || cats.length > 0) { @for (brand of brands; track
+    brand._id) {
+    <div class="border-2 rounded-md">
+      <figure>
+        <img
+          class="w-full h-[250px] object-contain"
+          [src]="brand.imageCover"
+          alt="car!"
+        />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ brand.title.split(" ", 2).join(" ") }}</h2>
+        <p>{{ brand.category.name }}</p>
+        <div class="flex justify-between">
+          <span class="text-2xl"> {{ brand.price | currency : "GBP" }} </span>
+          <span>
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            {{ brand.ratingsAverage }}
+          </span>
+        </div>
+        <div class="card-actions justify-between mt-3">
+          <button class="my-btn" (click)="addToCart(brand._id)">
+            {{ "button.add_to_cart" | translate }}
+          </button>
+          <button
+            (click)="toggleFav(brand.id)"
+            class="wish"
+            [disabled]="ids.includes(brand.id) || wishIds.includes(brand.id)"
+          >
+            @if (ids.includes(brand.id)|| wishIds.includes(brand.id)) {
+            <i class="fa-solid fa-heart text-red-600 text-3xl"></i>
+            } @else {
+            <i class="fa-regular fa-heart text-3xl"></i>
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+    <!-- Categories -->
+    @for (cat of cats; track cat._id) {
+    <div class="border-2 rounded-md">
+      <figure>
+        <img
+          class="w-full h-[250px] object-contain"
+          [src]="cat.imageCover"
+          [alt]="cat.title.split(' ', 2).join(' ')"
+        />
+      </figure>
+      <div class="card-body">
+        <h2 class="card-title">{{ cat.title.split(" ", 2).join(" ") }}</h2>
+        <p>{{ cat.category.name }}</p>
+        <div class="flex justify-between">
+          <span class="text-2xl"> {{ cat.price | currency : "GBP" }} </span>
+          <span>
+            <!-- @for (num of [1,2,3,4,5].slice(0 , prod.ratingsAverage); track
+                    $index) {
+                    <i class="fa-solid fa-star text-yellow-400"></i>
+                    } @if (prod.ratingsAverage % 1!==0) {
+                    <i class="fa-solid fa-star-half text-yellow-400"></i>
+                    } -->
+            <i class="fa-solid fa-star text-yellow-400"></i>
+            {{ cat.ratingsAverage }}
+          </span>
+        </div>
+        <div class="card-actions justify-between mt-3">
+          <button class="my-btn" (click)="addToCart(cat._id)">
+            {{ "button.add_to_cart" | translate }}
+          </button>
+          <button
+            (click)="toggleFav(cat.id)"
+            class="wish"
+            [disabled]="ids.includes(cat.id) || wishIds.includes(cat.id)"
+          >
+            @if (ids.includes(cat.id)|| wishIds.includes(cat.id)) {
+            <i class="fa-solid fa-heart text-red-600 text-3xl"></i>
+            } @else {
+            <i class="fa-regular fa-heart text-3xl"></i>
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+    } }@else{ }
+  </div>
+</section>

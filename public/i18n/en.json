@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "categories": "Categories",
+    "brands": "Brands",
+    "orders": "Orders",
+    "wishlist": "Wishlist",
+    "language": "Language",
+    "register": "Register",
+    "login": "Login"
+  },
+  "cart": {
+    "items": "Items",
+    "subtotal": "Subtotal",
+    "view_cart": "View Cart",
+    "empty_message": "There are no products in your cart",
+    "order_summary": "Order Summary",
+    "discount": "Discount({percentage}%)",
+    "delivery_fee": "Delivery Fee",
+    "total": "Total",
+    "checkout": "Go To Checkout",
+    "price": "Price"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "from": "From"
+  },
+  "button": {
+    "add_to_cart": "Add to Cart",
+    "clear_all": "Clear All"
+  },
+  "footer": {
+    "services": "SERVICES",
+    "branding": "Branding",
+    "design": "Design",
+    "marketing": "Marketing",
+    "advertisement": "Advertisement",
+    "company": "COMPANY",
+    "about_us": "About us",
+    "contact": "Contact",
+    "jobs": "Jobs",
+    "press_kit": "Press kit",
+
+    "social": "SOCIAL"
+  },
+  "auth": {
+    "sign_out": "Sign out",
+    "verifyCode": "Verify Code",
+    "codePlaceholder": "Code",
+    "enterEmail": "Enter Email",
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Enter password",
+    "resetPassword": "Reset Password",
+    "verifyButton": "Verify Code",
+    "resetButton": "Reset Password"
+  },
+  "checkout": {
+    "title": "Check Out",
+    "details": {
+      "label": "Details",
+      "placeholder": "Your Details",
+      "required": "Details is required."
+    },
+    "phone": {
+      "label": "Phone",
+      "placeholder": "Phone Number",
+      "required": "Phone number is required.",
+      "invalid": "Invalid phone number. Must be an 11-digit Egyptian number starting with 01."
+    },
+    "city": {
+      "label": "City",
+      "placeholder": "City",
+      "required": "City is required."
+    },
+    "payment": {
+      "online": "Online Payment",
+      "cash": "Cash"
+    }
+  },
+  "popular_products": "Popular Products",
+  "loading": "Loading...",
+  "login": {
+    "title": "Login Now",
+    "emailPlaceholder": "Enter Email",
+    "passwordPlaceholder": "Enter password",
+    "button": "Login",
+    "forgot_password": "Forgot Password?"
+  },
+  "register": {
+    "title": "Sign Up For Free",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Enter password",
+    "rePassword": "Enter rePassword",
+    "phoneNumber": "Phone Number",
+    "button": "Sign Up",
+    "errors": {
+      "nameRequired": "Name is required.",
+      "nameMinLength": "Name must be at least 3 characters long.",
+      "nameMaxLength": "Name must not exceed 50 characters.",
+      "emailRequired": "Email is required.",
+      "emailInvalid": "Invalid email format.",
+      "passwordRequired": "Password is required.",
+      "rePasswordRequired": "rePassword is required.",
+      "passwordInvalid": "Password must be 8-20 characters and include uppercase, lowercase, number, and special character.",
+      "passwordMismatch": "Passwords do not match.",
+      "phoneRequired": "Phone number is required.",
+      "phoneInvalid": "Invalid phone number. Must be an 11-digit Egyptian number starting with 01."
+    }
+  },
+  "resetPassword": "Reset Password",
+  "steps": {
+    "verifyEmail": "Verify Email",
+    "verifyCode": "Verify Code",
+    "resetPassword": "Reset Password"
+  },
+  "enterEmail": "Enter Email",
+  "verifyEmailButton": "Verify Email",
+  "remove": "Remove",
+  "wishlist": "WishList",
+  "created_at": "Created At",
+  "number_of_products": "Number of Products",
+  "payment_type": "Payment Type",
+  "total_order_price": "Total Order Price",
+  "product": "Product",
+  "products": "Products",
+  "cityRequired": "City is required.",
+  "detailsRequired": "Details is required."
+}

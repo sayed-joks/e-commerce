@@ -1,0 +1,244 @@
+<section
+  class="sm:w-1/2 mx-auto min-h-screen shadow-md border border-lime-400 rounded-md my-10"
+>
+  <div class="flex justify-center flex-wrap flex-col py-4">
+    <img src="/images/freshcart-logo.svg" class="" />
+    <h1 class="font-bold text-center text-3xl">
+      {{ "register.title" | translate }}
+    </h1>
+  </div>
+  <form
+    class="flex justify-center flex-wrap"
+    [formGroup]="register"
+    (ngSubmit)="submit()"
+  >
+    <div class="mb-3 w-[85%]">
+      <div class="relative">
+        <input
+          formControlName="name"
+          type="text"
+          placeholder="John Doe"
+          class="input input-floating peer"
+          id="floatingLabelDefault"
+        />
+        <label class="input-floating-label" for="floatingLabelDefault">{{
+          "register.fullName" | translate
+        }}</label>
+      </div>
+      @if (register.get('name')?.errors && register.get('name')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            <li>{{ nameErrorMessage }}</li>
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-3 w-[85%]">
+      <div class="relative">
+        <input
+          type="email"
+          placeholder="Enter Your Email@"
+          class="input input-floating peer"
+          id="floatingLabelDefault"
+          formControlName="email"
+        />
+        <label class="input-floating-label" for="floatingLabelDefault">{{
+          "register.email" | translate
+        }}</label>
+      </div>
+      @if (register.get('email')?.errors && register.get('email')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            <li>{{ emailErrorMessage }}</li>
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="mb-3 w-[85%]">
+      <div data-toggle-password-group>
+        <div class="input-group mb-4">
+          <input
+            id="toggle-password-multiple1"
+            type="password"
+            class="input focus:outline-none"
+            [placeholder]="'register.password' | translate"
+            formControlName="password"
+          />
+          <span class="input-group-text">
+            <button
+              type="button"
+              data-toggle-password='{ "target": ["#toggle-password-multiple1","#toggle-password-multiple2"] }'
+              class="block"
+              aria-label="password toggle"
+            >
+              <span
+                class="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-5 flex-shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-5 flex-shrink-0"
+              ></span>
+            </button>
+          </span>
+        </div>
+        @if (register.get('password')?.errors &&
+        register.get('password')?.touched) {
+        <div
+          class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <svg
+            class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              <li>{{ passwordErrorMessage }}</li>
+            </ul>
+          </div>
+        </div>
+        }
+        <!-- New password -->
+        <div class="input-group">
+          <input
+            id="toggle-password-multiple2"
+            type="password"
+            class="input focus:outline-none"
+            [placeholder]="'register.rePassword' | translate"
+            formControlName="rePassword"
+          />
+          <span class="input-group-text">
+            <button
+              type="button"
+              data-toggle-password='{ "target": ["#toggle-password-multiple1","#toggle-password-multiple2"] }'
+              class="block"
+              aria-label="password toggle"
+            >
+              <span
+                class="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-5 flex-shrink-0"
+              ></span>
+              <span
+                class="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-5 flex-shrink-0"
+              >
+              </span>
+            </button>
+          </span>
+        </div>
+        @if (register.getError('missmatch') &&
+        register.get('rePassword')?.touched) {
+        <div
+          class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+          role="alert"
+        >
+          <svg
+            class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+            />
+          </svg>
+          <span class="sr-only">Danger</span>
+          <div>
+            <ul class="mt-1.5 list-disc list-inside">
+              <li>{{ rePasswordErrorMessage }}</li>
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="mb-3 w-[85%]">
+      <div class="relative">
+        <input
+          formControlName="phone"
+          type="text"
+          placeholder="Phone Number"
+          class="input input-floating peer"
+          id="floatingInput"
+        />
+        <label class="input-floating-label" for="floatingInput">{{
+          "register.phoneNumber" | translate
+        }}</label>
+      </div>
+      @if (register.get('phone')?.errors && register.get('phone')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            <li>{{ phoneErrorMessage }}</li>
+          </ul>
+        </div>
+      </div>
+      }
+    </div>
+    <button
+      class="w-[85%] btn btn-gradient btn-primary"
+      type="submit"
+      [disabled]="register.invalid || isLoading"
+    >
+      {{ "register.button" | translate }} @if (isLoading) {<span
+        class="loading loading-dots"
+      ></span
+      >}
+    </button>
+  </form>
+</section>

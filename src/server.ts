@@ -13,6 +13,11 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+export const appRoutes = [
+  { path: 'product/:id', renderMode: 'no-prerender' },
+  { path: 'details/:id', renderMode: 'no-prerender' },
+  { path: 'checkout/:id', renderMode: 'no-prerender' },
+];
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -34,7 +39,7 @@ app.use(
     maxAge: '1y',
     index: false,
     redirect: false,
-  }),
+  })
 );
 
 /**
@@ -44,7 +49,7 @@ app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)
     .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
+      response ? writeResponseToNodeResponse(response, res) : next()
     )
     .catch(next);
 });

@@ -1,0 +1,18 @@
+<section class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 my-10">
+  @for (cat of allCat; track cat._id) {
+  <div class="card bg-base-100 shadow-xl hover:z-30">
+    <figure role="button" [routerLink]="['/product', cat._id]">
+      <img
+        [src]="cat.image"
+        alt="Shoes"
+        class="h-[200px] object-contain w-full"
+      />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">
+        {{ cat.name }}
+      </h2>
+    </div>
+  </div>
+  }
+</section>

@@ -1,0 +1,259 @@
+<nav
+  class="navbar rounded-box flex w-full items-center justify-between gap-2 shadow z-[99999999999999]"
+>
+  <div class="navbar-start max-md:w-1/4">
+    <a
+      class="link text-base-content link-neutral text-xl font-semibold no-underline"
+      routerLink="home"
+    >
+      <img src="/images/freshcart-logo.svg" alt="" />
+    </a>
+  </div>
+  <div class="navbar-center max-md:hidden">
+    @if (isLogin()) {
+    <ul class="menu menu-horizontal p-0 font-medium">
+      <li>
+        <a routerLink="categories">{{ "nav.categories" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="brands">{{ "nav.brands" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="allorders">{{ "nav.orders" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="favorite">{{ "nav.wishlist" | translate }}</a>
+      </li>
+    </ul>
+    } @if (!isLogin()) {
+    <ul class="menu menu-horizontal p-0 font-medium">
+      <li>
+        <a routerLink="register">{{ "nav.register" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="login">{{ "nav.login" | translate }}</a>
+      </li>
+    </ul>
+    }
+  </div>
+
+  <div class="items-center gap-4">
+    <div
+      class="dropdown relative inline-flex md:hidden rtl:[--placement:bottom-end] order-5 md:order-1"
+    >
+      <button
+        id="dropdown-default"
+        type="button"
+        class="dropdown-toggle btn btn-text btn-secondary btn-square"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Dropdown"
+      >
+        <span class="icon-[tabler--menu-2] dropdown-open:hidden size-5"></span>
+        <span class="icon-[tabler--x] dropdown-open:block hidden size-5"></span>
+      </button>
+      @if (isLogin()) {
+      <ul
+        class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="dropdown-default"
+      >
+        <li>
+          <a class="dropdown-item" routerLink="categories">{{
+            "nav.categories" | translate
+          }}</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="brands">{{
+            "nav.brands" | translate
+          }}</a>
+        </li>
+        <li>
+          <a routerLink="allorders" class="dropdown-item">{{
+            "nav.orders" | translate
+          }}</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="favorite">{{
+            "nav.wishlist" | translate
+          }}</a>
+        </li>
+      </ul>
+      } @if (!isLogin()) {
+      <ul
+        class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="dropdown-default"
+      >
+        <li>
+          <a class="dropdown-item" routerLink="register">{{
+            "nav.register" | translate
+          }}</a>
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="login">{{
+            "nav.login" | translate
+          }}</a>
+        </li>
+      </ul>
+      }
+    </div>
+    @if (isLogin()) {
+    <div class="navbar-end flex items-center gap-4">
+      <div class="flex-none">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+            <div class="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span class="badge badge-sm indicator-item"> {{ cartNum }} </span>
+            </div>
+          </div>
+          <div
+            tabindex="0"
+            class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow"
+          >
+            <div class="card-body">
+              <span class="text-lg font-bold"
+                >{{ cartNum }} {{ "cart.items" | translate }}</span
+              >
+              <span class="text-info"
+                >{{ "cart.subtotal" | translate }}: $ {{ totalPrice }}
+              </span>
+              <div class="card-actions">
+                <button class="btn btn-primary btn-block" routerLink="cart">
+                  {{ "cart.view_cart" | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]"
+      >
+        <button
+          id="dropdown-scrollable"
+          type="button"
+          class="dropdown-toggle flex items-center"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          aria-label="Dropdown"
+        >
+          <div class="avatar">
+            <div class="size-9.5 rounded-full">
+              <img
+                src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
+                alt="avatar 1"
+              />
+            </div>
+          </div>
+        </button>
+        <ul
+          class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60"
+          role="menu"
+          aria-orientation="vertical"
+          aria-labelledby="dropdown-avatar"
+        >
+          <li class="dropdown-header gap-2">
+            <div class="avatar">
+              <div class="w-10 rounded-full">
+                <img
+                  src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
+                  alt="avatar"
+                />
+              </div>
+            </div>
+            <div>
+              <h6 class="text-base-content text-base font-semibold">
+                {{ userData.name }}
+              </h6>
+              <small class="text-base-content/50">{{ userData.role }}</small>
+            </div>
+          </li>
+
+          <li class="dropdown-footer gap-2 border-none">
+            <a class="btn btn-error btn-soft btn-block" (click)="logout()">
+              <span class="icon-[tabler--logout]"></span>
+              {{ "auth.sign_out" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    }
+    <div class="hs-dropdown relative inline-flex z-[1]">
+      <button
+        id="hs-dropdown-default"
+        type="button"
+        class="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Dropdown"
+      >
+        {{ "nav.language" | translate }}
+        <svg
+          class="hs-dropdown-open:rotate-180 size-4"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </button>
+
+      <div
+        class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="hs-dropdown-default"
+      >
+        <div class="p-1 space-y-0.5">
+          <a
+            class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            (click)="change('en')"
+          >
+            English(Unidet States)
+          </a>
+          <a
+            class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-hidden focus:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+            (click)="change('ar')"
+          >
+            Arabic
+          </a>
+        </div>
+      </div>
+    </div>
+    <label class="swap swap-rotate mx-4">
+      <input
+        type="checkbox"
+        value="dark"
+        class="theme-controller hidden"
+        [checked]="isChecked"
+        (change)="changed($event)"
+      />
+      <span class="swap-off icon-[tabler--sun] size-7"></span>
+      <span class="swap-on icon-[tabler--moon] size-7"></span>
+    </label>
+  </div>
+</nav>
