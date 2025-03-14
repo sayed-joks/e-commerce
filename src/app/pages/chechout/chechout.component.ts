@@ -9,6 +9,7 @@ import { OrdersService } from '../../core/services/orders/orders.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { CartService } from '../../core/services/cart/cart.service';
 
 @Component({
   selector: 'app-chechout',
@@ -22,6 +23,7 @@ export class ChechoutComponent implements OnInit {
   private readonly toastrService = inject(ToastrService);
   private readonly router = inject(Router);
   private readonly translateService = inject(TranslateService);
+  private readonly cartService = inject(CartService);
 
   cartId: string = '';
   ngOnInit(): void {
@@ -71,6 +73,8 @@ export class ChechoutComponent implements OnInit {
           'Your request has been sent successfully',
           'FreshCart'
         );
+        this.cartService.numOfCart.next(0);
+        this.cartService.totalPrice.next(0);
         setTimeout(() => {
           this.router.navigate(['/allorders']);
         }, 3000);
