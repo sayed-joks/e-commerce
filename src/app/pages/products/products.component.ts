@@ -61,16 +61,9 @@ export class ProductsComponent implements OnInit {
   getProdCat(): void {
     this.ProductsService.getProductsOfCategories(this.brandId).subscribe({
       next: (res) => {
-        console.log(res.data);
         this.cats = res.data;
-        if (res.data.length == 0) {
-          this.Alert();
-        }
       },
     });
-  }
-  Alert() {
-    this.toastrService.info('No products found');
   }
   getWishList(): void {
     this.wishlistService.getFav().subscribe({
@@ -79,7 +72,6 @@ export class ProductsComponent implements OnInit {
         this.dataWish.forEach((product) => {
           this.wishIds.push(product.id);
         });
-        console.log(this.wishIds);
       },
     });
   }
@@ -87,7 +79,6 @@ export class ProductsComponent implements OnInit {
     this.wishlistService.addFav(id).subscribe({
       next: (res) => {
         this.toastrService.success(res.message);
-        console.log(res.data);
         this.ids = res.data;
       },
     });

@@ -30,7 +30,7 @@ export const routes: Routes = [
           import('./pages/reset-password/reset-password.component').then(
             (m) => m.ResetPasswordComponent
           ),
-        title: 'Register',
+        title: 'Reset Password',
       },
     ],
   },

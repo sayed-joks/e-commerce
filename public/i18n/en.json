@@ -8,13 +8,14 @@
     "register": "Register",
     "login": "Login"
   },
+  "no_products_found": "No products found",
   "cart": {
     "items": "Items",
     "subtotal": "Subtotal",
     "view_cart": "View Cart",
     "empty_message": "There are no products in your cart",
     "order_summary": "Order Summary",
-    "discount": "Discount({percentage}%)",
+    "discount": "Discount",
     "delivery_fee": "Delivery Fee",
     "total": "Total",
     "checkout": "Go To Checkout",

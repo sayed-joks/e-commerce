@@ -8,13 +8,14 @@
     "register": "تسجيل",
     "login": "تسجيل الدخول"
   },
+  "no_products_found": "لم يتم العثور على منتجات",
   "cart": {
     "items": "العناصر",
     "subtotal": "المجموع الفرعي",
     "view_cart": "عرض السلة",
     "empty_message": "لا توجد منتجات في سلتك",
     "order_summary": "ملخص الطلب",
-    "discount": "الخصم ({percentage}%)",
+    "discount": "الخصم",
     "delivery_fee": "رسوم التوصيل",
     "total": "الإجمالي",
     "checkout": "الانتقال للدفع",

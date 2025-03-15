@@ -5,3 +5,6 @@
 .my-btn {
   @apply py-2 px-4 border border-black rounded-full hover:text-white hover:bg-green-600 transition-all duration-200;
 }
+body {
+  overflow: hidden;
+}

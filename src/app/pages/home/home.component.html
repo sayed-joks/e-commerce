@@ -1,77 +1,27 @@
-<section class="z-0">
-  <div
-    data-hs-carousel='{
-    "loadingClasses": "opacity-0",
-    "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
-    "isAutoPlay": true
-  }'
-    class="relative"
-  >
-    <div
-      class="hs-carousel relative overflow-hidden w-full md:min-h-80 min-h-96 rounded-lg"
-    >
-      <div
-        class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0"
-      >
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img1.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img2.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img3.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img4.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img5.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img6.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-        <div class="hs-carousel-slide">
-          <div class="flex justify-center h-full">
-            <span
-              class="self-center text-4xl text-gray-800 transition duration-700 dark:text-white"
-              ><img src="/images/img7.avif" class="w-full" alt=""
-            /></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="z-0 mt-7">
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+      <img src="/images/img1.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img2.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img3.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img4.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img5.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img6.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+    <ng-template carouselSlide>
+      <img src="/images/img7.avif" class="w-full h-[300px]" alt="" />
+    </ng-template>
+  </owl-carousel-o>
 </section>
 <form action="/search" class="max-w-[70%] w-full px-4 mx-auto">
   <div class="relative">

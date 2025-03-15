@@ -3,7 +3,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CartService } from '../../core/services/cart/cart.service';
 import { ProductsService } from '../../core/services/products/products.service';
 import { ICategories } from '../../shared/interfaces/icategories';
-import { CurrencyPipe, NgClass, NgFor } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { SearchPipe } from '../../shared/pipes/search/search.pipe';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 import { WishlistService } from '../../core/services/Wishlist/wishlist.service';
 import { Datum } from '../../shared/interfaces/iwish-list';
 import { TranslatePipe } from '@ngx-translate/core';
-
+import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-home',
   imports: [
@@ -22,6 +22,7 @@ import { TranslatePipe } from '@ngx-translate/core';
     FormsModule,
     TranslatePipe,
     RouterLink,
+    CarouselModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -90,4 +91,17 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    items: 1,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 1500,
+  };
 }

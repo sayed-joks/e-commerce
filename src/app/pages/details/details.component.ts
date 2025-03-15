@@ -43,6 +43,8 @@ export class DetailsComponent implements OnInit {
     this.cartService.AddProductToCart(id).subscribe({
       next: (res) => {
         this.toastrService.success(res.message, 'FreshCart');
+        this.cartService.numOfCart.next(res.numOfCartItems);
+        this.cartService.totalPrice.next(res.data.totalCartPrice);
       },
     });
   }
