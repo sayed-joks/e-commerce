@@ -9,7 +9,7 @@
       <img src="/images/freshcart-logo.svg" alt="" />
     </a>
   </div>
-  <div class="navbar-center max-md:hidden">
+  <!-- <div class="navbar-center max-md:hidden">
     @if (isLogin()) {
     <ul class="menu menu-horizontal p-0 font-medium">
       <li>
@@ -35,8 +35,36 @@
       </li>
     </ul>
     }
+  </div> -->
+  <div class="dropdown dropdown-hover navbar-center max-md:hidden">
+    <div tabindex="0" role="button" class="btn m-1">Hover</div>
+    <ul
+      tabindex="0"
+      class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+    >
+      @if (isLogin()) {
+      <li>
+        <a routerLink="categories">{{ "nav.categories" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="brands">{{ "nav.brands" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="allorders">{{ "nav.orders" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="favorite">{{ "nav.wishlist" | translate }}</a>
+      </li>
+      } @if (!isLogin()) {
+      <li>
+        <a routerLink="register">{{ "nav.register" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="login">{{ "nav.login" | translate }}</a>
+      </li>
+      }
+    </ul>
   </div>
-
   <div class="items-center gap-4">
     <div
       class="dropdown relative inline-flex md:hidden rtl:[--placement:bottom-end] order-5 md:order-1"
