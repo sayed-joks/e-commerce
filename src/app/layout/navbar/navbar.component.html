@@ -99,11 +99,9 @@
       </ul>
       }
     </div> -->
-    <div
-      class="dropdown dropdown-hover inline-flex md:hidden rtl:[--placement:bottom-start] order-5 md:order-1 p-0 bg-transparent relative"
-    >
+    <div class="dropdown md:hidden md:oreder-1">
       <div tabindex="0" role="button" class="btn m-1">
-        <label class="btn btn-circle swap swap-rotate">
+        <label class="swap swap-rotate">
           <!-- this hidden checkbox controls the state -->
           <input type="checkbox" />
 
@@ -160,7 +158,6 @@
           }}</a>
         </li>
         } @if (!isLogin()) {
-
         <li>
           <a class="dropdown-item" routerLink="register">{{
             "nav.register" | translate
