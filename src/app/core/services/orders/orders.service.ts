@@ -32,7 +32,7 @@ export class OrdersService {
   }
   checkOut(id: string, data: object): Observable<any> {
     return this.httpClient.post(
-      `${environment.baseUrl}/api/v1/orders/checkout-session/${id}?url=http://localhost:4200`,
+      `${environment.baseUrl}/api/v1/orders/checkout-session/${id}?url=https://e-commerce-lyart-nine-68.vercel.app`,
       {
         shippingAddress: data,
       }
